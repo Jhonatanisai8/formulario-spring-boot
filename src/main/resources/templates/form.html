@@ -6,34 +6,28 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<form th:action="@{/form}" method="post">
+<form th:action="@{/form}" th:object="${usuario}" method="post">
     <h1 th:text="${tittle}"></h1>
     <fieldset>
         <legend>Información de Usuario</legend>
         <!-- nombre -->
         <div class="form-input">
             <label for="username">Nombre: </label>
-            <input type="text" name="username" id="username" placeholder="David Eli" th:value="${usuario.username}">
+            <input type="text" id="username" placeholder="David Eli" th:field="*{username}">
+            <div th:if="${#fields.hasErrors('username')}" th:errors="*{username} "></div>
         </div>
 
-        <div th:if="${errors!=null && errors.containsKey('username')}"
-             th:text="${errors.get('username')}">
-        </div>
         <!-- password -->
         <div class="form-input">
             <label for="password">Password: </label>
-            <input type="password" name="password" id="password" th:value="${usuario.password}">
-        </div>
-        <div th:if="${errors!=null && errors.containsKey('password')}"
-             th:text="${errors.get('password')}">
+            <input type="password" id="password" th:field="*{password}">
+            <div th:if="${#fields.hasErrors('password')}" th:errors="*{password} "></div>
         </div>
         <!-- email -->
         <div class="form-input">
             <label for="email">Email: </label>
-            <input type="text" name="email" id="email" placeholder="example@gmail.com" th:value="${usuario.email}">
-        </div>
-        <div th:if="${errors!=null && errors.containsKey('email')}"
-             th:text="${errors.get('email')}">
+            <input type="text" id="email" placeholder="example@gmail.com" th:field="*{email}">
+            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email} "></div>
         </div>
         <!-- boton -->
         <div class="button_send">
