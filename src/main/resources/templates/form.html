@@ -13,7 +13,7 @@
         <!-- nombre -->
         <div class="form-input">
             <label for="username">Nombre: </label>
-            <input type="text" name="username" id="username" placeholder="David Eli">
+            <input type="text" name="username" id="username" placeholder="David Eli" th:value="${usuario.username}">
         </div>
 
         <div th:if="${errors!=null && errors.containsKey('username')}"
@@ -22,7 +22,7 @@
         <!-- password -->
         <div class="form-input">
             <label for="password">Password: </label>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" th:value="${usuario.password}">
         </div>
         <div th:if="${errors!=null && errors.containsKey('password')}"
              th:text="${errors.get('password')}">
@@ -30,7 +30,7 @@
         <!-- email -->
         <div class="form-input">
             <label for="email">Email: </label>
-            <input type="text" name="email" id="email" placeholder="example@gmail.com">
+            <input type="text" name="email" id="email" placeholder="example@gmail.com" th:value="${usuario.email}">
         </div>
         <div th:if="${errors!=null && errors.containsKey('email')}"
              th:text="${errors.get('email')}">
