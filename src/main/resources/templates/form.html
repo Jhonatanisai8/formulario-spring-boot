@@ -15,15 +15,25 @@
             <label for="username">Nombre: </label>
             <input type="text" name="username" id="username" placeholder="David Eli">
         </div>
+
+        <div th:if="${errors!=null && errors.containsKey('username')}"
+             th:text="${errors.get('username')}">
+        </div>
         <!-- password -->
         <div class="form-input">
             <label for="password">Password: </label>
             <input type="password" name="password" id="password">
         </div>
+        <div th:if="${errors!=null && errors.containsKey('password')}"
+             th:text="${errors.get('password')}">
+        </div>
         <!-- email -->
         <div class="form-input">
             <label for="email">Email: </label>
-            <input type="email" name="email" id="email" placeholder="example@gmail.com">
+            <input type="text" name="email" id="email" placeholder="example@gmail.com">
+        </div>
+        <div th:if="${errors!=null && errors.containsKey('email')}"
+             th:text="${errors.get('email')}">
         </div>
         <!-- boton -->
         <div class="button_send">
