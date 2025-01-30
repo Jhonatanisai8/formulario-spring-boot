@@ -2,9 +2,10 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Mi primer Formulario</title>
+    <title th:text="${tittle}"></title>
 </head>
 <body>
+<h2 th:text="${tittle}"></h2>
 <form th:action="@{/form}" method="post">
     <div>
         <label for="username">Nombre de Usuario: </label>
