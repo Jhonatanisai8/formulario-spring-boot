@@ -10,9 +10,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
 
 @Controller
 public class FormController {
@@ -32,15 +29,14 @@ public class FormController {
         //validamos
         if (result.hasErrors()) {
             //retornamos a la vista
-            Map<String, String> errors = new HashMap<>();
-            result.getFieldErrors()
-                    .forEach(error -> {
-                        errors.put(error.getField(),
-                                "El campo ".concat(error.getField())
-                                        .concat(" ")
-                                        .concat(Objects.requireNonNull(error.getDefaultMessage())));
-                    });
-            model.addAttribute("errors", errors);
+//            Map<String, String> errors = new HashMap<>();
+//            result.getFieldErrors()
+//                    .forEach(error -> {
+//                        errors.put(error.getField(),
+//                                "El campo ".concat(error.getField())
+//                                        .concat(" ")
+//                                        .concat(Objects.requireNonNull(error.getDefaultMessage())));
+//                    });
             return "form";
         }
         usuarioServiceImpl.save(usuario);
