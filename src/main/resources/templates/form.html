@@ -3,36 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${tittle}"></title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<h2 th:text="${tittle}"></h2>
 <form th:action="@{/form}" method="post">
-    <div>
-        <label for="username">Nombre de Usuario: </label>
-        <div>
-            <input type="text" name="username" id="username">
+    <h1 th:text="${tittle}"></h1>
+    <fieldset>
+        <legend>Información de Usuario</legend>
+        <!-- nombre -->
+        <div class="form-input">
+            <label for="username">Nombre: </label>
+            <input type="text" name="username" id="username" placeholder="David Eli">
         </div>
-    </div>
-
-    <div>
-        <label for="password">Password de Usuario: </label>
-        <div>
+        <!-- password -->
+        <div class="form-input">
+            <label for="password">Password: </label>
             <input type="password" name="password" id="password">
         </div>
-    </div>
-
-    <div>
-        <label for="email">Email: </label>
-        <div>
-            <input type="email" name="email" id="email">
+        <!-- email -->
+        <div class="form-input">
+            <label for="email">Email: </label>
+            <input type="text" name="email" id="email" placeholder="example@gmail.com">
         </div>
-    </div>
-
-    <div>
-        <div>
+        <!-- boton -->
+        <div class="button_send">
             <input type="submit" value="Enviar">
         </div>
-    </div>
+    </fieldset>
 </form>
 </body>
 </html>

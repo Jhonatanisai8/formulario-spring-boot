@@ -1,0 +1,60 @@
+body {
+    background-color: #8E9AAF;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 100;
+    padding: 10px;
+}
+
+form {
+    background-color: #EFD3D7;
+    padding: 20px 0;
+    max-width: 500px;
+    margin: 40px auto auto;
+    box-shadow: 0 0 45px #fff9;
+    border-radius: 8px;
+}
+
+.form-input {
+    padding: 6px 20px;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    border: none;
+    border: 3px solid #999;
+    box-shadow: 0 0 45px #0001;
+    letter-spacing: 0.4em;
+}
+
+.button_send {
+    color: #fff;
+    width: 100px;
+    margin: auto;
+}
+
+.button_send>input {
+    background: #DEE2FF;
+    letter-spacing: 0.54em;
+    border-radius: 0.6em;
+}
+
+label {
+    font-size: 0.9em;
+    line-height: 2;
+}
+
+fieldset {
+
+    margin: 0 20px;
+}
