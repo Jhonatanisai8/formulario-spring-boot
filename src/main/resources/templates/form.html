@@ -10,10 +10,21 @@
     <h1 th:text="${tittle}"></h1>
     <fieldset>
         <legend>Información de Usuario</legend>
-        <!-- nombre -->
+        <!-- username -->
         <div class="form-input">
-            <label for="username">Nombre: </label>
-            <input type="text" id="username" placeholder="David Eli" th:field="*{username}">
+            <label for="nombre">Nombres: </label>
+            <input type="text" id="nombre" placeholder="Jhon David" th:field="*{nombre}">
+            <div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre} "></div>
+        </div>
+        <div class="form-input">
+            <label for="apellido">Apellidos: </label>
+            <input type="text" id="apellido" placeholder="Doe Perez" th:field="*{apellido}">
+            <div th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido} "></div>
+        </div>
+
+        <div class="form-input">
+            <label for="username">Nombre de Usuario: </label>
+            <input type="text" id="username" placeholder="jhondoe9" th:field="*{username}">
             <div th:if="${#fields.hasErrors('username')}" th:errors="*{username} "></div>
         </div>
 

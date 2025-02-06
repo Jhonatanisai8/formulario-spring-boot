@@ -43,7 +43,7 @@ input {
     margin: auto;
 }
 
-.button_send>input {
+.button_send > input {
     background: #DEE2FF;
     letter-spacing: 0.54em;
     border-radius: 0.6em;
@@ -57,4 +57,15 @@ label {
 fieldset {
 
     margin: 0 20px;
+}
+
+ul {
+    background: #3399ff;
+    padding: 20px;
+}
+
+ul li {
+    background: #cce5ff;
+    color: darkblue;
+    margin: 5px;
 }

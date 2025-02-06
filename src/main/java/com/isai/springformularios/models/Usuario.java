@@ -16,6 +16,10 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int usuarioId;
     @NotEmpty
+    private String nombre;
+    @NotEmpty
+    private String apellido;
+    @NotEmpty
     private String username;
     @NotEmpty
     private String password;
