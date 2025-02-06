@@ -18,7 +18,7 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int usuarioId;
     private String identificadorDni;
-    @NotEmpty(message = "El nombre no puede ser vacio.")
+    @NotEmpty
     @Size(min = 10, max = 15)
     private String nombre;
     @NotEmpty
