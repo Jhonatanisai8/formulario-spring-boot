@@ -9,9 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 @Controller
+@SessionAttributes("usuario")
 public class FormController {
     @Autowired
     private UsuarioServiceImpl usuarioServiceImpl;
@@ -29,23 +31,15 @@ public class FormController {
     }
 
     @PostMapping("/form")
-    public String procesar(@Valid Usuario usuario, BindingResult result, Model model) {
+    public String procesar(@Valid Usuario usuario, BindingResult result, Model model, SessionStatus status) {
         //validamos
         if (result.hasErrors()) {
-            //retornamos a la vista
-//            Map<String, String> errors = new HashMap<>();
-//            result.getFieldErrors()
-//                    .forEach(error -> {
-//                        errors.put(error.getField(),
-//                                "El campo ".concat(error.getField())
-//                                        .concat(" ")
-//                                        .concat(Objects.requireNonNull(error.getDefaultMessage())));
-//                    });
             return "form";
         }
         usuarioServiceImpl.save(usuario);
         model.addAttribute("tittle", "Resultado Form");
         model.addAttribute("usuario", usuario);
+        status.setComplete();//completa el proceso
         return "resultado";
     }
 }
