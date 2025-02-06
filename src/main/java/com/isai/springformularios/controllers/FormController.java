@@ -20,6 +20,10 @@ public class FormController {
     public String form(Model model) {
         model.addAttribute("tittle", "Formulario Usuarios");
         Usuario usuario = new Usuario();
+        usuario.setNombre("Usuario 1");
+        usuario.setApellido("Apellido 1");
+        usuario.setEmail("usuario1@gmail.com");
+        usuario.setIdentificadorDni("1234567890-AS");
         model.addAttribute("usuario", usuario);
         return "form";
     }

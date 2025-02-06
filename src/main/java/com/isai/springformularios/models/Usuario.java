@@ -15,6 +15,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int usuarioId;
+    private String identificadorDni;
     @NotEmpty
     private String nombre;
     @NotEmpty
