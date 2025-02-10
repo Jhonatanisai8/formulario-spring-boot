@@ -1,10 +1,7 @@
 package com.isai.springformularios.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,7 +28,7 @@ public class Usuario {
     @Size(min = 10, max = 15)
     private String apellido;
 
-    @NotEmpty
+    @NotBlank
     @Size(min = 3, max = 8)
     private String username;
 

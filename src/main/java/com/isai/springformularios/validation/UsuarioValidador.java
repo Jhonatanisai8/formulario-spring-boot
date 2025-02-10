@@ -20,8 +20,11 @@ public class UsuarioValidador
     public void validate(Object target, Errors errors) {
         Usuario usuario = (Usuario) target;
         //validamos el nombre
+//        ValidationUtils.rejectIfEmptyOrWhitespace(errors,
+//                "nombre", "NotEmpty.usuario.nombre");
+
         ValidationUtils.rejectIfEmptyOrWhitespace(errors,
-                "nombre", "NotEmpty.usuario.nombre");
+                "nombre", "Requerido.usuario.nombre");
 
         //otra alternativa
 //        if (usuario.getNombre().isEmpty()) {
