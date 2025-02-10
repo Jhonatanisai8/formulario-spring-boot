@@ -19,11 +19,11 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int usuarioId;
 
-    @Pattern(regexp = "[0-9]{2}.[0-9]{3}.[0-9]{3}[-][A-Z]{1}") //patron a seguir
+    //@Pattern(regexp = "[0-9]{2}.[0-9]{3}.[0-9]{3}[-][A-Z]{1}") //patron a seguir
     private String identificadorDni;
 
 
-    @NotEmpty
+    //@NotEmpty
     @Size(min = 10, max = 15)
     private String nombre;
 

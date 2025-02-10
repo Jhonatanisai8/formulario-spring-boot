@@ -2,6 +2,7 @@ package com.isai.springformularios.controllers;
 
 import com.isai.springformularios.models.Usuario;
 import com.isai.springformularios.service.UsurarioServiceImpl.UsuarioServiceImpl;
+import com.isai.springformularios.validation.UsuarioValidador;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,8 +16,12 @@ import org.springframework.web.bind.support.SessionStatus;
 @Controller
 @SessionAttributes("usuario")
 public class FormController {
+
     @Autowired
     private UsuarioServiceImpl usuarioServiceImpl;
+
+    @Autowired
+    private UsuarioValidador usuarioValidador;
 
     @GetMapping("/form")
     public String form(Model model) {
@@ -33,11 +38,14 @@ public class FormController {
     @PostMapping("/form")
     public String procesar(@Valid Usuario usuario, BindingResult result, Model model, SessionStatus status) {
         //validamos
+
+        usuarioValidador.validate(usuario, result);
+        model.addAttribute("tittle", "Resultado Form");
+
         if (result.hasErrors()) {
             return "form";
         }
         usuarioServiceImpl.save(usuario);
-        model.addAttribute("tittle", "Resultado Form");
         model.addAttribute("usuario", usuario);
         status.setComplete();//completa el proceso
         return "resultado";
