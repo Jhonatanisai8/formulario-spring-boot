@@ -1,6 +1,7 @@
 package com.isai.springformularios.models;
 
 import com.isai.springformularios.validation.IdentificarRegex;
+import com.isai.springformularios.validation.Requerido;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -26,8 +27,9 @@ public class Usuario {
     @Size(min = 10, max = 15)
     private String nombre;
 
-    @NotEmpty
-    @Size(min = 10, max = 15)
+    //@NotEmpty
+    @Requerido
+    @Size(max = 15)
     private String apellido;
 
     @NotBlank
