@@ -36,11 +36,11 @@ public class Usuario {
     @Size(min = 3, max = 8)
     private String username;
 
-    @NotEmpty
+    @Requerido
     @Size(min = 8, max = 20)
     private String password;
 
-    @NotEmpty
+    @Requerido
     @Email(message = "Correo con formato incorrecto")
     @Size(min = 10, max = 25)
     private String email;

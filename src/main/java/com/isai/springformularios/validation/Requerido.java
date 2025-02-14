@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface Requerido {
-    java.lang.String message() default "Apellidos requeridos por favor.";
+    java.lang.String message() default "Campo requerido por favor.";
 
     java.lang.Class<?>[] groups() default {};
 
