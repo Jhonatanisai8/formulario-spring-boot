@@ -24,12 +24,12 @@ public class Usuario {
 
 
     //@NotEmpty
-    @Size(min = 10, max = 15)
+    @Size(max = 25)
     private String nombre;
 
     //@NotEmpty
     @Requerido
-    @Size(max = 15)
+    @Size(max = 25)
     private String apellido;
 
     @NotBlank
