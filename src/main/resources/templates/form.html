@@ -46,6 +46,12 @@
             <input type="text" id="email" placeholder="example@gmail.com" th:field="*{email}">
             <div th:if="${#fields.hasErrors('email')}" th:errors="*{email} "></div>
         </div>
+
+        <div class="form-input">
+            <label for="cuenta">Cuenta: </label>
+            <input type="text" id="cuenta" placeholder="123123123123" th:field="*{cuenta}">
+            <div th:if="${#fields.hasErrors('cuenta')}" th:errors="*{cuenta} "></div>
+        </div>
         <!-- boton -->
         <div class="button_send">
             <input type="submit" value="Enviar">

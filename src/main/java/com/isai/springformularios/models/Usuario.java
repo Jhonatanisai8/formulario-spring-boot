@@ -44,4 +44,9 @@ public class Usuario {
     @Email(message = "Correo con formato incorrecto")
     @Size(min = 10, max = 25)
     private String email;
+
+    @NotNull
+    @Min(5)
+    @Max(5000)
+    private Integer cuenta;
 }
