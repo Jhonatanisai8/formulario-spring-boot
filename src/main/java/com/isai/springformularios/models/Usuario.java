@@ -1,5 +1,6 @@
 package com.isai.springformularios.models;
 
+import com.isai.springformularios.validation.IdentificarRegex;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -17,6 +18,7 @@ public class Usuario {
     private int usuarioId;
 
     //@Pattern(regexp = "[0-9]{2}.[0-9]{3}.[0-9]{3}[-][A-Z]{1}") //patron a seguir
+    @IdentificarRegex
     private String identificadorDni;
 
 

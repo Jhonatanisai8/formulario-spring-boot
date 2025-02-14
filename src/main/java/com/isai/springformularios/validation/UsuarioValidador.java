@@ -18,7 +18,7 @@ public class UsuarioValidador
 
     @Override
     public void validate(Object target, Errors errors) {
-        Usuario usuario = (Usuario) target;
+//        Usuario usuario = (Usuario) target;
         //validamos el nombre
 //        ValidationUtils.rejectIfEmptyOrWhitespace(errors,
 //                "nombre", "NotEmpty.usuario.nombre");
@@ -31,9 +31,9 @@ public class UsuarioValidador
 //            errors.rejectValue("nombre",
 //                    "NotEmpty.usuario.nombre");
 //        }
-        if (!usuario.getIdentificadorDni().matches("[0-9]{2}.[0-9]{3}.[0-9]{3}[-][A-Z]{1}")) {
-            errors.rejectValue("identificadorDni",
-                    "Pattern.usuario.identificadorDni");
-        }
+//        if (!usuario.getIdentificadorDni().matches("[0-9]{2}.[0-9]{3}.[0-9]{3}[-][A-Z]{1}")) {
+//            errors.rejectValue("identificadorDni",
+//                    "Pattern.usuario.identificadorDni");
+//        }
     }
 }
