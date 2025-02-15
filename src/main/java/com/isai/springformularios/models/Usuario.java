@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "usuarios")
 @Data
@@ -49,4 +51,7 @@ public class Usuario {
     @Min(5)
     @Max(5000)
     private Integer cuenta;
+
+    @NotNull
+    private Date fechaNacimiento;
 }
