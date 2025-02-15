@@ -55,7 +55,7 @@
 
         <div class="form-input">
             <label for="fechaNacimiento">Fecha Nacimiento: </label>
-            <input type="text" id="fechaNacimiento" placeholder="2025/02/12" th:field="*{fechaNacimiento}">
+            <input type="date" id="fechaNacimiento" placeholder="2025/02/12" th:field="*{fechaNacimiento}">
             <div th:if="${#fields.hasErrors('fechaNacimiento')}" th:errors="*{fechaNacimiento} "></div>
         </div>
         <!-- boton -->

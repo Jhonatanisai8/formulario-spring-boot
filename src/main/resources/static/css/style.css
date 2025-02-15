@@ -1,8 +1,9 @@
 body {
-    background-color: #8E9AAF;
+    background-color: #333;
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 100;
+    color: #61E294;
 }
 
 h1 {
@@ -15,7 +16,7 @@ h1 {
 }
 
 form {
-    background-color: #EFD3D7;
+    background-color: transparent;
     padding: 20px 0;
     max-width: 500px;
     margin: 40px auto auto;

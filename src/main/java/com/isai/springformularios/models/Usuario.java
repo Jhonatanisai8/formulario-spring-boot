@@ -55,7 +55,7 @@ public class Usuario {
 
     @NotNull
     @DateTimeFormat(
-            pattern = "yyyy/MM/dd"
+            pattern = "yyyy-MM-dd"
     )
     private Date fechaNacimiento;
 }
