@@ -57,5 +57,6 @@ public class Usuario {
     @DateTimeFormat(
             pattern = "yyyy-MM-dd"
     )
+    @Past
     private Date fechaNacimiento;
 }
