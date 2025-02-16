@@ -14,6 +14,7 @@
         <div class="form-input">
             <label for="pais">País: </label>
             <select id="pais" th:field="*{pais}">
+                <option value="">=Seleccinar=</option>
                 <option th:each="pais : ${paises}" th:text="${pais}" th:value="${pais}"></option>
             </select>
             <div th:if="${#fields.hasErrors('pais')}" th:errors="*{pais} "></div>

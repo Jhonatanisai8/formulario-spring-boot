@@ -40,6 +40,7 @@ public class FormController {
 
         //binder.registerCustomEditor(String.class, new NombreMayusculaEditor());
         binder.registerCustomEditor(String.class, "nombre", new NombreMayusculaEditor());
+        binder.registerCustomEditor(String.class, "pais", new NombreMayusculaEditor());
         binder.registerCustomEditor(String.class, "apellido", new NombreMayusculaEditor());
 
     }
