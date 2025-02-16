@@ -12,13 +12,17 @@
         <legend>Información de Usuario</legend>
 
         <div class="form-input">
-            <label for="pais">País: </label>
-            <select id="pais" th:field="*{pais}">
+            <label for="pais.paisId">País: </label>
+            <select id="pais.paisId" th:field="*{pais.paisId}">
                 <option value="">=Seleccinar=</option>
-                <option th:each="pais : ${paisesMap.entrySet()}" th:text="${pais.getValue()}"
-                        th:value="${pais.getKey()}"></option>
+                <!--                <option th:each="pais : ${paisesMap.entrySet()}" th:text="${pais.getValue()}"-->
+                <!--                        th:value="${pais.getKey()}"></option>-->
+                <!--                -->
+                <option th:each="pais : ${listaPaises}"
+                        th:value="${pais.paisId}"
+                        th:text="${pais.nombrePais}"></option>
             </select>
-            <div th:if="${#fields.hasErrors('pais')}" th:errors="*{pais} "></div>
+            <div th:if="${#fields.hasErrors('pais.paisId')}" th:errors="*{pais.paisId} "></div>
         </div>
 
         <div class="form-input">
