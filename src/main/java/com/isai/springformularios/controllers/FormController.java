@@ -1,5 +1,6 @@
 package com.isai.springformularios.controllers;
 
+import com.isai.springformularios.editors.NombreMayusculaEditor;
 import com.isai.springformularios.models.Usuario;
 import com.isai.springformularios.service.UsurarioServiceImpl.UsuarioServiceImpl;
 import com.isai.springformularios.validation.UsuarioValidador;
@@ -38,6 +39,11 @@ public class FormController {
         dateFormat.setLenient(false);
         //binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));//valida de forma global
         binder.registerCustomEditor(Date.class, "fechaNacimiento", new CustomDateEditor(dateFormat, true)); //valida un campo en especifico
+
+        //binder.registerCustomEditor(String.class, new NombreMayusculaEditor());
+        binder.registerCustomEditor(String.class,"nombre", new NombreMayusculaEditor());
+        binder.registerCustomEditor(String.class,"apellido", new NombreMayusculaEditor());
+
     }
 
 
@@ -45,10 +51,10 @@ public class FormController {
     public String form(Model model) {
         model.addAttribute("tittle", "Formulario Usuarios");
         Usuario usuario = new Usuario();
-        usuario.setNombre("Usuario 1");
-        usuario.setApellido("Apellido 1");
-        usuario.setEmail("usuario1@gmail.com");
-        usuario.setIdentificadorDni("1234567890-AS");
+//        usuario.setNombre("Usuario 1");
+//        usuario.setApellido("Apellido 1");
+//        usuario.setEmail("usuario1@gmail.com");
+//        usuario.setIdentificadorDni("1234567890-AS");
         model.addAttribute("usuario", usuario);
         return "form";
     }
