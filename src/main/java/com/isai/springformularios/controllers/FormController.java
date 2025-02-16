@@ -4,6 +4,7 @@ import com.isai.springformularios.editors.NombreMayusculaEditor;
 import com.isai.springformularios.models.Pais;
 import com.isai.springformularios.models.Usuario;
 import com.isai.springformularios.service.UsurarioServiceImpl.UsuarioServiceImpl;
+import com.isai.springformularios.service.paisServiceImple.PaisServiceImpl;
 import com.isai.springformularios.validation.UsuarioValidador;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class FormController {
     @Autowired
     private UsuarioValidador usuarioValidador;
 
+    @Autowired
+    private PaisServiceImpl paisServiceImpl;
+
     //valida de manera cuando se envia el formulario
     @InitBinder
     public void initBinder(WebDataBinder binder) {
@@ -46,27 +50,7 @@ public class FormController {
 
     @ModelAttribute("listaPaises")
     public List<Pais> listaPaises() {
-        return List.of(
-                new Pais(1L, "ARG", "Argentina"),
-                new Pais(2L, "BOL", "Bolivia"),
-                new Pais(3L, "BRA", "Brasil"),
-                new Pais(4L, "CHL", "Chile"),
-                new Pais(5L, "COL", "Colombia"),
-                new Pais(6L, "CRI", "Costa Rica"),
-                new Pais(7L, "CUB", "Cuba"),
-                new Pais(8L, "ECU", "Ecuador"),
-                new Pais(9L, "SLV", "El Salvador"),
-                new Pais(10L, "GTM", "Guatemala"),
-                new Pais(11L, "HND", "Honduras"),
-                new Pais(12L, "MEX", "México"),
-                new Pais(13L, "NIC", "Nicaragua"),
-                new Pais(14L, "PAN", "Panamá"),
-                new Pais(15L, "PRY", "Paraguay"),
-                new Pais(16L, "PER", "Perú"),
-                new Pais(17L, "DOM", "República Dominicana"),
-                new Pais(18L, "URY", "Uruguay"),
-                new Pais(19L, "VEN", "Venezuela")
-        );
+        return paisServiceImpl.findAll();
     }
 
     @ModelAttribute("paises")
