@@ -61,5 +61,6 @@ public class Usuario {
     private Date fechaNacimiento;
 
     @Embedded
+    //@NotNull
     private Pais pais;
 }
