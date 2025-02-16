@@ -37,7 +37,6 @@ public class FormController {
         dateFormat.setLenient(false);
         //binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));//valida de forma global
         binder.registerCustomEditor(Date.class, "fechaNacimiento", new CustomDateEditor(dateFormat, true)); //valida un campo en especifico
-
         //binder.registerCustomEditor(String.class, new NombreMayusculaEditor());
         binder.registerCustomEditor(String.class, "nombre", new NombreMayusculaEditor());
         binder.registerCustomEditor(String.class, "pais", new NombreMayusculaEditor());
