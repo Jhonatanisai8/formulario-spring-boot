@@ -12,10 +12,20 @@
         <legend>Información de Usuario</legend>
 
         <div class="form-input">
-            <label for="nombre">Nombres: </label>
-            <input type="text" id="identificadorDni" placeholder="Jhon David" th:field="*{identificadorDni}">
+            <label for="pais">País: </label>
+            <select id="pais" th:field="*{pais}">
+                <option th:each="pais : ${paises}" th:text="${pais}" th:value="${pais}"></option>
+            </select>
+            <div th:if="${#fields.hasErrors('pais')}" th:errors="*{pais} "></div>
+        </div>
+
+        <div class="form-input">
+            <label for="nombre">Código: </label>
+            <input type="text" id="identificadorDni" placeholder="00.000.00-A" th:field="*{identificadorDni}">
             <div th:if="${#fields.hasErrors('identificadorDni')}" th:errors="*{identificadorDni} "></div>
         </div>
+
+
         <!-- username -->
         <div class="form-input">
             <label for="nombre">Nombres: </label>
@@ -49,7 +59,7 @@
 
         <div class="form-input">
             <label for="cuenta">Cuenta: </label>
-            <input type="number" id="cuenta" placeholder="123123123123" th:field="*{cuenta}">
+            <input type="number" id="cuenta" placeholder="0000" th:field="*{cuenta}">
             <div th:if="${#fields.hasErrors('cuenta')}" th:errors="*{cuenta} "></div>
         </div>
 
