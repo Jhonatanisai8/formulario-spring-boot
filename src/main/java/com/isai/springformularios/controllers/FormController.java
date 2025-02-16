@@ -124,13 +124,13 @@ public class FormController {
             return "form";
         }
 
-        Pais paisBuscado = listaPaises().stream()
-                .filter(pais -> pais.getPaisId()
-                        .equals(usuario.getPais().getPaisId()))
-                .findFirst()
-                .get();
-
-        usuario.setPais(paisBuscado);
+//        Pais paisBuscado = listaPaises().stream()
+//                .filter(pais -> pais.getPaisId()
+//                        .equals(usuario.getPais().getPaisId()))
+//                .findFirst()
+//                .get();
+//
+//        usuario.setPais(paisBuscado);
         usuarioServiceImpl.save(usuario);
         model.addAttribute("usuario", usuario);
         status.setComplete();//completa el proceso

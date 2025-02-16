@@ -18,7 +18,7 @@ public class UsuarioValidador
 
     @Override
     public void validate(Object target, Errors errors) {
-        Usuario usuario = (Usuario) target;
+//        Usuario usuario = (Usuario) target;
         //validamos el nombre
 //        ValidationUtils.rejectIfEmptyOrWhitespace(errors,
 //                "nombre", "NotEmpty.usuario.nombre");
@@ -26,9 +26,9 @@ public class UsuarioValidador
         ValidationUtils.rejectIfEmptyOrWhitespace(errors,
                 "nombre", "Requerido.usuario.nombre");
 
-        if(usuario.getPais().getPaisId()==null){
-            errors.rejectValue("pais.paisId", "Requerido.usuario.pais");
-        }
+//        if(usuario.getPais().getPaisId()==null){
+//            errors.rejectValue("pais.paisId", "Requerido.usuario.pais");
+//        }
         //otra alternativa
 //        if (usuario.getNombre().isEmpty()) {
 //            errors.rejectValue("nombre",
