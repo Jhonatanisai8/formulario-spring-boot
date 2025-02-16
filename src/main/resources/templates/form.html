@@ -22,7 +22,7 @@
                         th:value="${pais.paisId}"
                         th:text="${pais.nombrePais}"></option>
             </select>
-            <div th:if="${#fields.hasErrors('pais.paisId')}" th:errors="*{pais.paisId} "></div>
+            <div th:if="${#fields.hasErrors('pais')}" th:errors="*{pais} "></div>
         </div>
 
         <div class="form-input">
