@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,4 +27,11 @@ public class Pais {
     @Size(max = 20)
     @NotEmpty
     private String nombrePais;
+
+    @OneToMany(
+            mappedBy = "pais",
+            cascade = CascadeType.ALL
+           // orphanRemoval = true
+    )
+    private List<Usuario> usuarios;
 }
