@@ -60,7 +60,7 @@ public class Usuario {
     @Past
     private Date fechaNacimiento;
 
-    @Embedded
+    // @Embedded
     //@NotNull
-    private Pais pais;
+//    private Pais pais;
 }
