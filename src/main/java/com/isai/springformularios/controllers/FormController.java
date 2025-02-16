@@ -16,10 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @SessionAttributes("usuario")
@@ -126,6 +123,14 @@ public class FormController {
         if (result.hasErrors()) {
             return "form";
         }
+
+        Pais paisBuscado = listaPaises().stream()
+                .filter(pais -> pais.getPaisId()
+                        .equals(usuario.getPais().getPaisId()))
+                .findFirst()
+                .get();
+
+        usuario.setPais(paisBuscado);
         usuarioServiceImpl.save(usuario);
         model.addAttribute("usuario", usuario);
         status.setComplete();//completa el proceso
