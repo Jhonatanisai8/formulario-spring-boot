@@ -16,7 +16,9 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @SessionAttributes("usuario")
@@ -47,6 +49,31 @@ public class FormController {
     @ModelAttribute("paises")
     public List<String> paises() {
         return List.of("Colombia", "Perú", "España", "Mexico", "Chile", "EE.UU");
+    }
+
+    @ModelAttribute("paisesMap")
+    public Map<String, String> paisesMap() {
+        Map<String, String> paises = new HashMap<>();
+        paises.put("Perú", "Perú");
+        paises.put("Bolivia", "Bolivia");
+        paises.put("Brasil", "Brasil");
+        paises.put("Chile", "Chile");
+        paises.put("Colombia", "Colombia");
+        paises.put("Costa Rica", "Costa Rica");
+        paises.put("Argentina", "Argentina");
+        paises.put("Cuba", "Cuba");
+        paises.put("Ecuador", "Ecuador");
+        paises.put("El Salvador", "El Salvador");
+        paises.put("Guatemala", "Guatemala");
+        paises.put("Honduras", "Honduras");
+        paises.put("México", "México");
+        paises.put("Nicaragua", "Nicaragua");
+        paises.put("Panamá", "Panamá");
+        paises.put("Paraguay", "Paraguay");
+        paises.put("República Dominicana", "República Dominicana");
+        paises.put("Uruguay", "Uruguay");
+        paises.put("Venezuela", "Venezuela");
+        return paises;
     }
 
 
