@@ -1,5 +1,6 @@
 package com.isai.springformularios.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.isai.springformularios.validation.IdentificarRegex;
 import com.isai.springformularios.validation.Requerido;
 import jakarta.persistence.*;
@@ -60,7 +61,11 @@ public class Usuario {
     @Past
     private Date fechaNacimiento;
 
-    // @Embedded
-    //@NotNull
-//    private Pais pais;
+    @ManyToOne
+    @JoinColumn(
+            name = "pais_id",
+            referencedColumnName = "paisId",
+            nullable = false
+    )
+    private Pais pais;
 }
