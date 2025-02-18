@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 @Entity
 @Table(name = "usuarios")
@@ -61,6 +63,20 @@ public class Usuario {
     @Past
     private Date fechaNacimiento;
 
+    @ManyToMany
+    @JoinTable(
+            name = "usuarios_roles",
+            joinColumns = @JoinColumn(
+                    name = "usuario_id",
+                    referencedColumnName = "usuarioId"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "rol_id",
+                    referencedColumnName = "rolId"
+            )
+    )
+    private List<Rol> roles;
+
     @ManyToOne
     @JoinColumn(
             name = "pais_id",
@@ -68,4 +84,5 @@ public class Usuario {
             nullable = false
     )
     private Pais pais;
+
 }
