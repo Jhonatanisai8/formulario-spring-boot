@@ -21,11 +21,11 @@ public class Pais {
     private Long paisId;
 
     @Size(max = 20)
-    @NotEmpty
+    //@NotEmpty
     private String codigoPais;
 
     @Size(max = 20)
-    @NotEmpty
+    //@NotEmpty
     private String nombrePais;
 
     @OneToMany(
