@@ -1,6 +1,7 @@
 package com.isai.springformularios.controllers;
 
 import com.isai.springformularios.editors.NombreMayusculaEditor;
+import com.isai.springformularios.editors.PaisPropertiesEditors;
 import com.isai.springformularios.models.Pais;
 import com.isai.springformularios.models.Usuario;
 import com.isai.springformularios.service.UsurarioServiceImpl.UsuarioServiceImpl;
@@ -32,6 +33,9 @@ public class FormController {
     @Autowired
     private PaisServiceImpl paisServiceImpl;
 
+    @Autowired
+    private PaisPropertiesEditors paisPropertiesEditors;
+
     //valida de manera cuando se envia el formulario
     @InitBinder
     public void initBinder(WebDataBinder binder) {
@@ -46,6 +50,8 @@ public class FormController {
         binder.registerCustomEditor(String.class, "pais", new NombreMayusculaEditor());
         binder.registerCustomEditor(String.class, "apellido", new NombreMayusculaEditor());
 
+        ///REGISTRAMOS PAIS
+        binder.registerCustomEditor(Pais.class, "pais", new NombreMayusculaEditor());
     }
 
     @ModelAttribute("listaPaises")
