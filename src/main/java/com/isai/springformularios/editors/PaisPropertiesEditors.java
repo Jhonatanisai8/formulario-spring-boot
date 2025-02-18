@@ -15,6 +15,15 @@ public class PaisPropertiesEditors
 
     @Override
     public void setAsText(String id) throws IllegalArgumentException {
-        this.setValue(paisService.findPaisById(Long.parseLong(id)));
+        if (id != null && id.length() > 0) {
+            try {
+                Long idPais = Long.parseLong(id);
+                this.setValue(paisService.findPaisById(idPais));
+            } catch (NumberFormatException e) {
+                setValue(null);
+            }
+        } else {
+            setValue(null);
+        }
     }
 }
