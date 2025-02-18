@@ -1,5 +1,6 @@
 package com.isai.springformularios.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.isai.springformularios.validation.IdentificarRegex;
 import com.isai.springformularios.validation.Requerido;
@@ -8,6 +9,7 @@ import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -19,6 +21,9 @@ import java.util.Locale;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(
+        exclude = "pais"
+)
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
