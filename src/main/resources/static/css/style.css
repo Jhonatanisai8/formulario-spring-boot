@@ -36,7 +36,7 @@ form {
     padding: 6px 20px;
 }
 
-input, select {
+input, select,.checkboxes-content {
     width: 100%;
     box-sizing: border-box;
     padding: 6px 12px;
@@ -84,3 +84,15 @@ ul li {
 option {
     background-color: #333;
 }
+
+.form-checkbox {
+    padding-top: 0;
+    padding-bottom: 0;
+    color: #61E294;
+}
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+

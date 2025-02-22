@@ -19,9 +19,16 @@
         <li th:text="${usuario.password}"></li>
         <li th:text="${usuario.email}"></li>
         <li th:text="${usuario.cuenta}"></li>
-<!--        <li th:text="${#dates.format(usuario.fechaNacimiento,'yyyy-MM-dd')}"></li>-->
+        <!--        <li th:text="${#dates.format(usuario.fechaNacimiento,'yyyy-MM-dd')}"></li>-->
         <li th:text="${#calendars.format(usuario.fechaNacimiento,'yyyy-MM-dd')}"></li>
     </ul>
+
+    <div>
+        <p>Roles: </p>
+        <ul>
+            <li th:each="rol :${usuario.roles}"></li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>
