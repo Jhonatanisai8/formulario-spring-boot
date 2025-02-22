@@ -3,9 +3,11 @@ package com.isai.springformularios.controllers;
 import com.isai.springformularios.editors.NombreMayusculaEditor;
 import com.isai.springformularios.editors.PaisPropertiesEditors;
 import com.isai.springformularios.models.Pais;
+import com.isai.springformularios.models.Rol;
 import com.isai.springformularios.models.Usuario;
 import com.isai.springformularios.service.UsurarioServiceImpl.UsuarioServiceImpl;
 import com.isai.springformularios.service.paisServiceImple.PaisServiceImpl;
+import com.isai.springformularios.service.rolServiceImpl.RolServiceImpl;
 import com.isai.springformularios.validation.UsuarioValidador;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,9 @@ public class FormController {
     @Autowired
     private PaisPropertiesEditors paisPropertiesEditors;
 
+    @Autowired
+    private RolServiceImpl rolServiceImpl;
+
     //valida de manera cuando se envia el formulario
     @InitBinder
     public void initBinder(WebDataBinder binder) {
@@ -51,7 +56,7 @@ public class FormController {
         binder.registerCustomEditor(String.class, "apellido", new NombreMayusculaEditor());
 
         ///REGISTRAMOS PAIS
-        binder.registerCustomEditor(Pais.class, "pais", new NombreMayusculaEditor());
+        binder.registerCustomEditor(Pais.class, "pais", paisPropertiesEditors);
     }
 
     @ModelAttribute("listaPaises")
@@ -89,6 +94,10 @@ public class FormController {
         return paises;
     }
 
+    @ModelAttribute("listaRoles")
+    public List<Rol> listaRoles() {
+        return rolServiceImpl.findAll();
+    }
 
     @GetMapping("/form")
     public String form(Model model) {
