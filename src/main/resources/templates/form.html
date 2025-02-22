@@ -28,7 +28,7 @@
         <div class="form-input form-checkbox">
             <label>Roles: </label>
             <div class="checkboxes" th:each="rol : ${listaRoles}">
-                <input type="checkbox" th:field="*{roles}" th:value="${rol.nombreRol}"/>
+                <input type="checkbox" th:field="*{roles}" th:value="${rol.rolId}">
                 <label class="checkboxes-content" th:text="${rol.nombreRol}"></label>
             </div>
             <div th:if="${#fields.hasErrors('roles')}" th:errors="*{roles} "></div>

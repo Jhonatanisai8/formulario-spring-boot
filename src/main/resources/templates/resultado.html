@@ -24,9 +24,9 @@
     </ul>
 
     <div>
-        <p>Roles: </p>
+        <h2>Roles: </h2>
         <ul>
-            <li th:each="rol :${usuario.roles}"></li>
+            <li th:each="rol :${usuario.roles}" th:text="${rol.nombreRol}"></li>
         </ul>
     </div>
 </div>
