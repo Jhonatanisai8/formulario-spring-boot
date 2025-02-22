@@ -80,6 +80,7 @@ public class Usuario {
                     referencedColumnName = "rolId"
             )
     )
+    @NotEmpty
     private List<Rol> roles;
 
     @ManyToOne
