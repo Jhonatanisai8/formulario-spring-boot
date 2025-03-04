@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 //@Embeddable
 @Entity
+@ToString(exclude = "usuarios")
 public class Pais {
 
     @Id
@@ -32,7 +34,7 @@ public class Pais {
     @OneToMany(
             mappedBy = "pais",
             cascade = CascadeType.ALL
-           // orphanRemoval = true
+            // orphanRemoval = true
     )
     private List<Usuario> usuarios;
 }
