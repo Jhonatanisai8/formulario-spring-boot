@@ -92,4 +92,8 @@ public class Usuario {
     private Pais pais;
 
     private Boolean activo;
+
+    @NotEmpty
+    @Size(max = 10)
+    private String genero;
 }
