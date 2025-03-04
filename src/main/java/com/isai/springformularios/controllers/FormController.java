@@ -129,26 +129,20 @@ public class FormController {
     }
 
     @PostMapping("/form")
-    public String procesar(@Valid Usuario usuario, BindingResult result, Model model, SessionStatus status) {
-        //validamos
-
-        ///usuarioValidador.validate(usuario, result);
-
-        model.addAttribute("tittle", "Resultado Form");
-
+    public String procesar(@Valid Usuario usuario, BindingResult result, Model model) {
         if (result.hasErrors()) {
+            model.addAttribute("tittle", "Resultado Form");
             return "form";
         }
-
-//        Pais paisBuscado = listaPaises().stream()
-//                .filter(pais -> pais.getPaisId()
-//                        .equals(usuario.getPais().getPaisId()))
-//                .findFirst()
-//                .get();
-//
-//        usuario.setPais(paisBuscado);
         usuarioServiceImpl.save(usuario);
-        model.addAttribute("usuario", usuario);
+        return "/redirect:/ver";
+    }
+
+    @GetMapping("/ver")
+    public String ver(@SessionAttribute("usuario") Usuario usuario,
+                      Model model,
+                      SessionStatus status) {
+        model.addAttribute("tittle", "Resultado Form");
         status.setComplete();//completa el proceso
         return "resultado";
     }
