@@ -99,6 +99,11 @@
             <input type="date" id="fechaNacimiento" placeholder="2025/02/12" th:field="*{fechaNacimiento}">
             <div th:if="${#fields.hasErrors('fechaNacimiento')}" th:errors="*{fechaNacimiento} "></div>
         </div>
+
+        <div class="form-input">
+            <input hidden="hidden" th:field="*{valorSecreto}">
+        </div>
+
         <!-- boton -->
         <div class="button_send">
             <input type="submit" value="Enviar">

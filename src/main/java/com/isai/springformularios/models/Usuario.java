@@ -96,4 +96,7 @@ public class Usuario {
     @NotEmpty
     @Size(max = 10)
     private String genero;
+
+    @Size(max = 50)
+    private String valorSecreto;
 }
