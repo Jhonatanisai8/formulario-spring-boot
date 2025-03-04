@@ -120,6 +120,8 @@ public class FormController {
 //        usuario.setIdentificadorDni("1234567890-AS");
         usuario.setActivo(true);
         usuario.setValorSecreto("Valor Secreto");
+        Pais paisBuscado = paisServiceImpl.findPaisById(2L);
+        usuario.setPais(paisBuscado);
         model.addAttribute("usuario", usuario);
         return "form";
     }
