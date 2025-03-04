@@ -135,13 +135,17 @@ public class FormController {
             return "form";
         }
         usuarioServiceImpl.save(usuario);
-        return "/redirect:/ver";
+        return "redirect:/ver";
     }
 
     @GetMapping("/ver")
-    public String ver(@SessionAttribute("usuario") Usuario usuario,
+    public String ver(@SessionAttribute(name = "usuario", required = false) Usuario usuario,
                       Model model,
                       SessionStatus status) {
+        //redirigimos al formulario
+        if (usuario == null) {
+            return "redirect:/form";
+        }
         model.addAttribute("tittle", "Resultado Form");
         status.setComplete();//completa el proceso
         return "resultado";
