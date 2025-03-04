@@ -121,7 +121,9 @@ public class FormController {
         usuario.setActivo(true);
         usuario.setValorSecreto("Valor Secreto");
         Pais paisBuscado = paisServiceImpl.findPaisById(2L);
+        Rol rolBuscado = rolServiceImpl.findById(1L);
         usuario.setPais(paisBuscado);
+        usuario.setRoles(List.of(rolBuscado));
         model.addAttribute("usuario", usuario);
         return "form";
     }
