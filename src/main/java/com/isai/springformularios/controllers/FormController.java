@@ -112,6 +112,7 @@ public class FormController {
 //        usuario.setApellido("Apellido 1");
 //        usuario.setEmail("usuario1@gmail.com");
 //        usuario.setIdentificadorDni("1234567890-AS");
+        usuario.setActivo(true);
         model.addAttribute("usuario", usuario);
         return "form";
     }

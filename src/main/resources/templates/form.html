@@ -11,6 +11,13 @@
     <fieldset>
         <legend>Información de Usuario</legend>
 
+        <!--        campo habilitar-->
+        <div class="form-input">
+            <label for="activo">Habilitar: </label>
+            <input type="checkbox" id="activo" th:field="*{activo}">
+            <div th:if="${#fields.hasErrors('activo')}" th:errors="*{activo} "></div>
+        </div>
+
         <div class="form-input">
             <label for="pais">País: </label>
             <select id="pais" th:field="*{pais}">
