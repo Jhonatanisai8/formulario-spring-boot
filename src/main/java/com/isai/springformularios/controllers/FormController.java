@@ -104,6 +104,12 @@ public class FormController {
         return rolServiceImpl.findAll();
     }
 
+    @ModelAttribute("generos")
+    public List<String> generos() {
+        return List.of("Masculino", "Femenino");
+    }
+
+
     @GetMapping("/form")
     public String form(Model model) {
         model.addAttribute("tittle", "Formulario Usuarios");
