@@ -28,8 +28,14 @@
         <tr th:each="user : ${users}">
             <td th:text="${user.usuarioId}"></td>
             <td th:text="${user.genero}"></td>
-            <td th:text="${user.pais}"></td>
-            <td th:text="${user.roles}"></td>
+            <td th:text="${user.pais.nombrePais}"></td>
+            <td>
+                <div th:each="role : ${user.roles}">
+                    <ul>
+                        <li th:text="${role.nombreRol}"></li>
+                    </ul>
+                </div>
+            </td>
             <td th:text="${user.identificadorDni}"></td>
             <td th:text="${user.nombre}"></td>
             <td th:text="${user.apellido}"></td>
