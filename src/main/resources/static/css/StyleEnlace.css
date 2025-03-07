@@ -1,9 +1,28 @@
+body {
+    font-family: sans-serif;
+}
+
+.header-box {
+    box-sizing: border-box;
+    background-color: #04AA6D;
+    margin-top: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+.header-content {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+}
+
 .button-redirect-form-user {
     box-sizing: border-box;
     margin: 5px 5px;
     background-color: #04AA6D;
     text-align: center;
-    padding: 10px;
+    padding: 0 10px;
     width: 150px;
     height: auto;
     border-radius: 6px;
@@ -13,4 +32,6 @@
     text-decoration: none;
     font-weight: bold;
     color: #fff;
+    margin: 12px;
 }
+

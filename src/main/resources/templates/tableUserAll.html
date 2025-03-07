@@ -7,7 +7,9 @@
     <link rel="stylesheet" th:href="@{/css/StyleEnlace.css}">
 </head>
 <body>
-<h1 th:text="${tittle}"></h1>
+<header class="header-box">
+    <h1 class="header-content" th:text="${tittle}"></h1>
+</header>
 <div class="button-redirect-form-user">
     <a class="content-button-redirect" th:href="@{/form}">Registrar nuevo Usuario</a>
 </div>
