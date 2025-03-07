@@ -1,0 +1,16 @@
+.button-redirect-form-user {
+    box-sizing: border-box;
+    margin: 5px 5px;
+    background-color: #04AA6D;
+    text-align: center;
+    padding: 10px;
+    width: 150px;
+    height: auto;
+    border-radius: 6px;
+}
+
+.content-button-redirect {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}

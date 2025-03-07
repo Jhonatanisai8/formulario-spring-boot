@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <title th:text="${tittle}"></title>
     <link rel="stylesheet" th:href="@{/css/StyleTable.css}">
+    <link rel="stylesheet" th:href="@{/css/StyleEnlace.css}">
 </head>
 <body>
 <h1 th:text="${tittle}"></h1>
+<div class="button-redirect-form-user">
+    <a class="content-button-redirect" th:href="@{/form}">Registrar nuevo Usuario</a>
+</div>
 <table id="usersTable">
     <thead>
     <tr>
@@ -26,26 +30,26 @@
     </thead>
 
     <tbody>
-        <tr th:each="user : ${users}">
-            <td th:text="${user.usuarioId}"></td>
-            <td th:text="${user.genero}"></td>
-            <td th:text="${user.pais.nombrePais}"></td>
-            <td>
-                <div th:each="role : ${user.roles}">
-                    <ul>
-                        <li th:text="${role.nombreRol}"></li>
-                    </ul>
-                </div>
-            </td>
-            <td th:text="${user.identificadorDni}"></td>
-            <td th:text="${user.nombre}"></td>
-            <td th:text="${user.apellido}"></td>
-            <td th:text="${user.username}"></td>
-            <td th:text="${user.password}"></td>
-            <td th:text="${user.email}"></td>
-            <td th:text="${user.cuenta}"></td>
-            <td th:text="${user.fechaNacimiento}"></td>
-        </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.usuarioId}"></td>
+        <td th:text="${user.genero}"></td>
+        <td th:text="${user.pais.nombrePais}"></td>
+        <td>
+            <div th:each="role : ${user.roles}">
+                <ul>
+                    <li th:text="${role.nombreRol}"></li>
+                </ul>
+            </div>
+        </td>
+        <td th:text="${user.identificadorDni}"></td>
+        <td th:text="${user.nombre}"></td>
+        <td th:text="${user.apellido}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.cuenta}"></td>
+        <td th:text="${user.fechaNacimiento}"></td>
+    </tr>
     </tbody>
 </table>
 </body>
