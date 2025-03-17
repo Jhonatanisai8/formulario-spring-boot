@@ -29,7 +29,13 @@ public class TiempoTranscurridoInterceptor
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+        long tiempoFin = System.currentTimeMillis();
+        long tiempoInicio = (Long) request.getAttribute("tiempoTranscurrido");
+        long tiempoTranscurrido = tiempoFin - tiempoInicio;
+        if (modelAndView != null) {
+            modelAndView.addObject("tiempoTranscurrido", tiempoTranscurrido);
+        }
+        logger.info("Tiempo Transcurrido: " + tiempoTranscurrido + " milisegundos");
         logger.info("TiempoTranscurridoInterceptor.postHandle saliendo......");
-
     }
 }
