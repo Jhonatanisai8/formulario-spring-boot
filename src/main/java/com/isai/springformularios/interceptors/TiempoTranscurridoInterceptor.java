@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Random;
 
-@Component
+@Component("tiempoTranscurridoInterceptor")
 public class TiempoTranscurridoInterceptor
         implements HandlerInterceptor {
 
@@ -19,8 +19,8 @@ public class TiempoTranscurridoInterceptor
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         logger.info("TiempoTranscurridoInterceptor.preHandle entrando......");
-        Long tiempoTranscurrido = System.currentTimeMillis();
-        request.setAttribute("tiempoTranscurrido", tiempoTranscurrido);
+        Long tiempoInicio = System.currentTimeMillis();
+        request.setAttribute("tiempoInicio", tiempoInicio);
         Random rand = new Random();
         Integer demora = rand.nextInt(500); // 0- 499
         Thread.sleep(demora);
@@ -30,7 +30,7 @@ public class TiempoTranscurridoInterceptor
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         long tiempoFin = System.currentTimeMillis();
-        long tiempoInicio = (Long) request.getAttribute("tiempoTranscurrido");
+        long tiempoInicio = (Long) request.getAttribute("tiempoInicio");
         long tiempoTranscurrido = tiempoFin - tiempoInicio;
         if (modelAndView != null) {
             modelAndView.addObject("tiempoTranscurrido", tiempoTranscurrido);
