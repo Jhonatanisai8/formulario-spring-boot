@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <title th:text="${tittle}"></title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
+
 </head>
 <body>
+
+<div>
+    <span th:text="'Tiempo Transcurrido: '+${tiempoInicio} + ' en milisegundos.'"></span>
+</div>
+
 <form th:action="@{/form}" th:object="${usuario}" method="post">
     <h1 th:text="${tittle}"></h1>
     <fieldset>

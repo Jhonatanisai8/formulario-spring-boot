@@ -6,6 +6,12 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+
+<div>
+    <span th:text="'Tiempo Transcurrido: '+${tiempoInicio} + ' en milisegundos.'"></span>
+</div>
+
+
 <div class="contenedor">
     <h1 th:text="${tittle}"></h1>
     <ul>
